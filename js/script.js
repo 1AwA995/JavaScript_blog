@@ -198,7 +198,7 @@ function generateAuthor() {
 
 addClickListenersToTags();
 
-function generateArray() {
+function generateArrays() {
   /* [NEW] create a new variable allTags with an empty array */
   let allTags = [];
 
@@ -207,16 +207,18 @@ function generateArray() {
   /* START LOOP: for every article: */
 
   /* find tags wrapper */
+  const authorWrapper = article.querySelector(optAuthorSelector);
 
   /* make html variable with empty string */
 
   /* get tags from data-tags attribute */
-
+  const articleTags = article.getAttribute("data-tags");
   /* split tags into array */
 
   /* START LOOP: for each tag */
 
   /* generate HTML of the link */
+  const linkHtml = '<li><a href="#tag-' + tag + '">' + tag + "</a></li>";
 
   /* add generated code to html variable */
 
@@ -239,4 +241,4 @@ function generateArray() {
   tagList.innerHTML = allTags.join(" ");
 }
 
-generateArray();
+generateArrays();
